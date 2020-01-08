@@ -4,8 +4,6 @@
   export let id;
   export let visibleMonth;
   export let selected;
-  export let start;
-  export let end;
   export let highlighted;
   export let shouldShakeDate;
 
@@ -20,21 +18,19 @@
 
 <div class="month-container">
   {#each visibleMonth.weeks as week (week.id) }
-    <Week 
-      days={week.days} 
-      {selected} 
-      {start} 
-      {end} 
-      {highlighted} 
-      {shouldShakeDate} 
+    <Week
+      days={week.days}
+      {selected}
+      {highlighted}
+      {shouldShakeDate}
       {direction}
-      on:dateSelected 
+      on:dateSelected
     />
   {/each}
 </div>
 
 <style>
-  .month-container { 
+  .month-container {
     width: 100%;
     display: -ms-grid;
     display: grid;

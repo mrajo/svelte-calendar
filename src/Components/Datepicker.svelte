@@ -230,9 +230,9 @@
   export let dayHighlightedTextColor = '#4a4a4a';
 </script>
 
-<div 
-  class="datepicker" 
-  class:open="{isOpen}" 
+<div
+  class="datepicker"
+  class:open="{isOpen}"
   class:closing="{isClosing}"
   style='
     --button-background-color: {buttonBackgroundColor};
@@ -264,7 +264,7 @@
     </div>
     <div slot="contents">
       <div class="calendar">
-        <NavBar 
+        <NavBar
           {month}
           {year}
           {start}
@@ -273,15 +273,14 @@
           {canDecrementMonth}
           {monthsOfYear}
           on:monthSelected={e => changeMonth(e.detail)}
-          on:incrementMonth={e => incrementMonth(e.detail)} 
+          on:incrementMonth={e => incrementMonth(e.detail)}
         />
         <div class="legend">
           {#each sortedDaysOfWeek as day}
           <span>{day[1]}</span>
           {/each}
         </div>
-        <Month {visibleMonth} {selected} {highlighted} {shouldShakeDate} {start}
-        {end} id={visibleMonthId} on:dateSelected={e => registerSelection(e.detail)} />
+        <Month {visibleMonth} {selected} {highlighted} {shouldShakeDate} id={visibleMonthId} on:dateSelected={e => registerSelection(e.detail)} />
       </div>
     </div>
   </Popover>
